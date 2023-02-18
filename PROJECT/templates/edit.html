@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Edit Mahila BOOKING
+{% endblock title %}
+
+{% block body %}
+
+<div class="row">
+
+<div class="col-md-4">
+</div>
+
+<div class="col-md-4">
+<br>
+
+<h4 class="text-center bg-success text-white">Update Your Slot</h4>
+<br>
+
+
+<form action="/edit/{{posts.pid}}" method="post" class="jumbotron">
+
+ 
+
+  <div class="form-group">
+
+    <input type="email" class="form-control" id="email" value={{current_user.email}} name="email" required>
+  
+  </div>
+
+  <div class="form-group">
+  
+    <input type="text" class="form-control" id="name" name="name" value={{posts.name}} placeholder="Full Name" required>
+  
+  </div>
+
+ <div class="form-group">
+
+            
+                                      
+<select class="form-control" id="scheme" name="scheme"  required>
+        <option selected>{{posts.scheme}} </option>
+        <option value="SRCW">SRCW</option>
+        <option value="DLCW">DLCW</option>
+        <option value="Block Level">Block Level</option>
+ 
+      </select>
+ </div>
+
+ <div class="form-group">
+
+            
+                                      
+<select class="form-control" id="amount" name="amount"  required>
+        <option selected>{{posts.amount}} </option>
+        <option value="50,000-1,00,000">50,000-1,00,000</option>
+        <option value="1,00,000-5,00,000">1,00,000-5,00,000</option>
+        <option value="5,00,000 and above">5,00,000 and above</option>
+ 
+      </select>
+ </div>
+
+  <div class="form-group">
+    
+    <input type="time" class="form-control" value={{posts.time}}  name="time" placeholder="Time" required>
+  
+  </div>
+  <div class="form-group">
+    
+    <input type="date" class="form-control" value={{posts.date}}  name="date" placeholder="date" required>
+  
+  </div>
+  <div class="form-group">
+    
+    <input type="text" class="form-control" value={{posts.business}}  id="business" name="business" placeholder="Business" required>
+  
+  </div>
+
+  <div class="form-group">
+
+    <input type="text" class="form-control" value={{posts.sect}}  id="sect" name="sect" placeholder="Financer Sect" required>
+  
+  </div>
+
+  <div class="form-group">
+
+    <input type="number" class="form-control" value={{posts.number}}  id="number" name="number" placeholder="Phone Number" required>
+  
+  </div>
+
+  
+  <button type="submit" class="btn btn-warning btn-sm btn-block">Update</button>
+</form>
+
+
+
+
+</div>
+<div class="col-md-4"></div>
+</div>
+
+
+{% endblock body %}
